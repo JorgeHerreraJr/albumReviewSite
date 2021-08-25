@@ -1,0 +1,79 @@
+### Get all albums
+GET http://localhost:8080/api/albums
+Accept: application/json
+
+### Get an album by ID
+GET http://localhost:8080/api/albums/1
+
+### Delete an album by ID
+DELETE http://localhost:8080/api/albums/1
+
+### Post a new album (ONE)
+POST http://localhost:8080/api/albums
+Content-Type: application/json
+
+{
+    "albumTitle" : "Catchy Album Title",
+    "albumArtist" : "Super Cool Artits Name",
+    "albumArt" : "www.art-url.com",
+    "albumLabel" : "Popular Music Label",
+    "albumRating" : 5
+}
+
+### Post a new album (TWO)
+POST http://localhost:8080/api/albums
+Content-Type: application/json
+
+{
+    "albumTitle" : "Another Album",
+    "albumArtist" : "Another Artists",
+    "albumArt" : "www.another-art-url.com",
+    "albumLabel" : "Another Music Label",
+    "albumRating" : 3
+}
+
+### Update an album
+PUT http://localhost:8080/api/albums/2
+Content-Type: application/json
+
+{
+    "id" : 2,
+    "albumTitle" : "ABC33 Catchy Album Title",
+    "albumArtist" : "ABC33 Super Cool Artits Name",
+    "albumArt" : "ABC33 www.art-url.com",
+    "albumLabel" : "ABC33 Popular Music Label",
+    "albumRating" : 4
+}
+
+### Add a song to an album
+PATCH http://localhost:8080/api/albums/9/songs
+Content-Type: application/json
+
+{
+    "trackTitle" : "Song Five",
+    "trackLink" : "www.song-5-link.com",
+    "trackDuration" : "0:45",
+    "trackRating" : 6
+}
+
+### Add a song to an album (part two)
+PATCH http://localhost:8080/api/albums/2/songs
+Content-Type: application/json
+
+{
+    "trackTitle" : "Song Six",
+    "trackLink" : "www.song-6-link.com",
+    "trackDuration" : "5:45",
+    "trackRating" : 2
+}
+
+### Add a comment to an album
+PATCH http://localhost:8080/api/albums/1/comments
+
+Comment to add blah blah blah
+
+### Add a comment to a song
+PATCH http://localhost:8080/api/songs/5/comments
+
+Song comment for song id two sob
+
